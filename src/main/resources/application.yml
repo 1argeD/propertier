@@ -1,7 +1,0 @@
-configuration:
-    projectName : Spring Boot
-management:
-  security:
-    enabled:false
-server.port=8888
-spring.cloud.config.server.git.uri=\

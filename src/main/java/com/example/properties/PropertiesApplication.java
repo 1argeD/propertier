@@ -12,25 +12,29 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
-/*-----------------------------3번----------------------------------------------------*/
-@EnableConfigurationProperties
+/*-----------------------------4번----------------------------------------------------*/
 @SpringBootApplication
+@EnableConfigServer//스프링 클라우드 서버 설정 사용
+/*-----------------------------3번----------------------------------------------------*/
+//@EnableConfigurationProperties
+//@SpringBootApplication
 /*----------------------------2번-----------------------------------------------------*/
 //@Configuration
 /*------------------------------1번---------------------------------------------------*/
 //@PropertySource("some.properties")
 public class PropertiesApplication {
-    private final Log log = LogFactory.getLog(getClass());
+//    private final Log log = LogFactory.getLog(getClass());
     /*-----------------------------------3번방법----------------------------------------------*/
-    @Autowired
-    public PropertiesApplication(ConfigurationProjectProperties cp ) {
-        log.info("configurationProjectProperties.projectName = " + cp.getProjectName());
-    }
+//    @Autowired
+//    public PropertiesApplication(ConfigurationProjectProperties cp ) {
+//        log.info("configurationProjectProperties.projectName = " + cp.getProjectName());
+//    }
     /*------------------------------------2번 방법---------------------------------------------*/
 //    @Bean
 //    static PropertySourcesPlaceholderConfigurer pspc() {
@@ -68,7 +72,7 @@ public class PropertiesApplication {
 //    }
     public static void main(String[] args)  throws Throwable {
         /*-------------------------------------3번 방법--------------------------------------------*/
-        SpringApplication.run(PropertiesApplication.class);
+        SpringApplication.run(PropertiesApplication.class, args);
         /*-------------------------------------2번 방법--------------------------------------------*/
 //        AnnotationConfigApplicationContext ac =
 //                new AnnotationConfigApplicationContext();
@@ -111,16 +115,16 @@ public class PropertiesApplication {
 
 }
 /*------------------------------------3번----------------------------*/
-@Component
-@ConfigurationProperties("configuration")
-class ConfigurationProjectProperties {
-    private String projectName;
-
-    public String getProjectName() {
-        return projectName;
-    }
-
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
-    }
-}
+//@Component
+//@ConfigurationProperties("configuration")
+//class ConfigurationProjectProperties {
+//    private String projectName;
+//
+//    public String getProjectName() {
+//        return projectName;
+//    }
+//
+//    public void setProjectName(String projectName) {
+//        this.projectName = projectName;
+//    }
+//}

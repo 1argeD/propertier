@@ -1,0 +1,19 @@
+server:
+  port: 8888    # Spring Cloud Config Server ??
+spring:
+  application:
+    name: config-server # Confing Server  ??
+  cloud:
+    config:
+      server:
+        git:
+           uri: https://github.com/1argeD/propertier.git # public Repository? ?? ? ?? ? Yaml ??? ???? ?? ??
+# actuator ?? ??
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
