@@ -24,7 +24,7 @@ repositories {
 }
 //스프링 클라우드 서버 설정
 ext {
-    set('springCloudVersion', "2021.0.2")
+    set('springCloudVersion', "2023.0.1")
 }
 
 
