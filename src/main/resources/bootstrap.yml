@@ -1,6 +1,6 @@
 spring:
   application:
-    name: config-server # Confing Server  ??
+    name: config-client # Confing Server  ??
   cloud:
     config:
       uri: ${vcap.services.configuration-service.credentials.uri:http://localhost:8888} # public Repository? ?? ? ?? ? Yaml ??? ???? ?? ??

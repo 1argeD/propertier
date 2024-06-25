@@ -115,16 +115,16 @@ public class PropertiesApplication {
 
 }
 /*------------------------------------3번----------------------------*/
-//@Component
-//@ConfigurationProperties("configuration")
-//class ConfigurationProjectProperties {
-//    private String projectName;
-//
-//    public String getProjectName() {
-//        return projectName;
-//    }
-//
-//    public void setProjectName(String projectName) {
-//        this.projectName = projectName;
-//    }
-//}
+@Component
+@ConfigurationProperties("configuration")
+class ConfigurationProjectProperties {
+    private String projectName;
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+}

@@ -1,6 +1,6 @@
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--&lt;!&ndash;<context:property-placeholder location="classpath:some.properties" />&ndash;&gt;-->
-<!--<bean class="classic.Application">-->
-<!--    <property name="configurationProjectName"-->
-<!--                    value="${configuration.projectName}" />-->
-<!--</bean>-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<context:property-placeholder location="classpath:some.properties" />-->
+<bean class="classic.Application">
+    <property name="configurationProjectName"
+                    value="${configuration.projectName}" />
+</bean>
